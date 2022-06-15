@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>My First jQuery Application</title>
+    <script src="js/jquery.js">
+    </script>
+</head>
+<body>
+<div class="data">
+
+
+
+</div>
+<!--data yug api :3Nh47mAJgycXYguXlEen9GGnYEe2vNkne2J  -->
+<!-- https://price-api.datayuge.com/docs/?javascript#price-comparison-api   -->
+<!--    -->
+
+<script>
+    (function($)
+    {
+        $(document).ready(function(e)
+        {
+           $.ajax(
+            {
+                url:"https://price-api.datayuge.com/api/v1/compare/list/categories?api_key=3Nh47mAJgycXYguXlEen9GGnYEe2vNkne2J&page=1",
+                method:"get",
+                dataType: 'jsonp',
+                success:function(data,status,xhr)
+                {
+                    data=JSON.stringify(data);
+                    $(".data").html("<pre>"+data+"</pre>")
+                },
+                error:function(data)
+                {
+                    console.log("Error");
+                },
+                complete:function(data)
+                {
+                    console.log("completed");
+                }
+            }
+           );
+            
+
+
+        });
+    }(jQuery));
+</script>
+
+</body>
+</html>
