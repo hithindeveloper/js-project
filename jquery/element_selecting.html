@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>My First jQuery Application</title>
+    <script src="js/jquery.js">
+    </script>
+</head>
+<body>
+    <form method="post" class="form">
+    <label>Username: </label><input type="text" id="username" class="username" name="username"><br/>
+    <label>Email: </label><input type="text" id="email" class="email" name="email"><br/>
+    <label>Phone: </label><input type="text" id="phone" class="phone" name="phone"><br/>
+    <button class="btn" >Save</button>
+    </form>
+    <script>
+        (function($)
+        {
+            
+            $(document).ready(function(e)
+            {
+                $(".form").bind('submit',function(e)
+                {
+                    
+                  var username=$("#username").val(); //element selection based on id
+                  var email = $(".email").val();     //element selection based on class
+                  var phone=$('[name="phone"]').val(); //element selection based on name
+                 
+                });
+                
+            });
+
+
+        }(jQuery));
+    </script>
+
+
+
+
+
+</body>
+</html>

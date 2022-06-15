@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>My First jQuery Application</title>
+    <script src="js/jquery.js">
+    </script>
+</head>
+<body>
+<p class="message">Hello World</p>
+<button class="btn-hide">Hide</button><br/><button class="btn-show">Show</button><br/>
+<button class="btn-fade-in">Fade In</button><br/><button class="btn-fade-out">Fade Out</button><br/>
+<script>
+    (function($)
+    {
+        $(document).ready(function(e)
+        {
+            $(".btn-hide").bind('click',function(e)
+            {
+                $(".message").hide();
+            });
+            $(".btn-show").bind('click',function(e)
+            {
+                $(".message").show();
+            });
+            $(".btn-fade-in").bind('click',function(e)
+            {
+                $(".message").fadeIn();
+            });
+            $(".btn-fade-out").bind('click',function(e)
+            {
+                $(".message").fadeOut();
+            });
+        });
+    }(jQuery));
+</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>My First jQuery Application</title>
+    <script src="js/jquery.js">
+    </script>
+</head>
+<body>
+    <form method="post" class="form">
+    <label>Username: </label><input type="text" id="username" class="username" name="username"><br/>
+    <label>Email: </label><input type="text" id="email" class="email" name="email"><br/>
+    <p class="keys"></p>
+    <label>Phone: </label><input type="text" id="phone" class="phone" name="phone"><br/>
+    <p class="phone-message"></p>
+
+    <button class="btn" >Save</button>
+    </form>
+    <script>
+        (function($)
+        {
+            $(document).ready(function(e)
+            {
+               $(".username").bind("mouseenter",function(e)
+               {
+                $(".username").prop("title","Your Are Entered");
+               });
+               
+               $(".username").bind("mouseleave",function(e)
+               {
+                $(".username").prop("title","Your Are Leaving");
+               });
+                
+               $("#email").keypress(function()
+               {
+                var email = $("#email").val();
+                email=$.trim(email);
+                if(email.length>=0)
+                {
+                $(".keys").text(email)
+                }
+               });
+               $("#phone").change(function()
+               {
+                    phone = $("#phone").val();
+                    $(".phone-message").text(phone);
+               });
+
+
+
+            });
+        }(jQuery));
+    </script>
+</body>
+</html>
