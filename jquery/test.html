@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="js/jquery.js"></script>
+</head>
+
+<body>
+    <form id="newsletter" method="post">
+        <input type="text" id="email" name="email">
+        <input type="submit" value="validate">
+    </form>
+    <script>
+        $(document).ready(function (e) {
+            $("#newsletter").bind("submit", function (e) {
+                var userinput = $("#email").val();
+                var pattern = /^\w+([-+.'][^\s]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+
+                if (!pattern.test(userinput)) {
+                    alert('not a valid e-mail address');
+                    e.preventDefault();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

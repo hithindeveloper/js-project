@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!-- http://parsleyjs.org/doc/index.html -->
+<html>
+<head>
+    <script src="js/jquery.js"></script>
+    <script src="js/parsley.min.js"></script>
+    <link href="css/parsley.css"  rel="stylesheet">
+   
+</head>
+
+<body>
+    <form  method="get" id="newsletter" action="ajax.html" data-parsley-validate="">
+        <label>Name:</label>
+        <input type="text" name="username" class="username" data-parsley-required="true" data-parsley-required-message="Please insert your name">
+        <br/>
+        <label>Email:</label>
+        <input type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" data-parsley-pattern-message="Please enter valid email formate"  name="emailid" 	data-parsley-trigger="change"  data-parsley-required="true" data-parsley-required-message="Please insert your email id" data-parsley-trigger="change" class="emailid" >
+        <br/>
+        <label>Gender</label>
+        <br/>
+        <label>Male<input type="radio" name="gender" value="male" id="gender" class="gender" required="true" data-parsley-required-message="Please Select a Gender"></label>
+        <label>Female<input type="radio" name="gender" value="female" id="gender" class="gender"></label>
+        <br/>
+        <label>Password<input required name="password" data-parsley-required-message="Please enter a password" data-parsley-equalto-message="Please enter the same password1" data-parsley-equalto="#rpassword" id="password" class="password"></label>
+        <br/><label>Rpassword<input data-parsley-required-message="Please enter a password" required name="rpassword" data-parsley-equalto-message="Please enter the same password2"  data-parsley-equalto="#password" id="rpassword" class="rpassword"></label>
+        <br/><input type="submit" value="Validate">
+    </form>
+    <script>
+       $(document).ready(function(e)
+       {
+        $('#newsletter').parsley();
+
+       });
+    </script>
+</body>
+
+</html>
