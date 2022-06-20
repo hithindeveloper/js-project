@@ -1,0 +1,49 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>My First jQuery Application</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"> <!--including jquery extenaly from google cdn content delivery network-- >
+    </script>
+</head>
+
+<body>
+    <h1 class="styling">Hello, World!</h1>
+    <input type="button" class="red" value="red">
+    <input type="button" class="green" value="green">
+    <input type="button" class="violet" value="violet">
+</body>
+<script>
+        $(document).ready(function (e) {
+            $(".red").bind("click", function (e) {
+                $(".styling").css(
+                    {
+                        "font-size":"40px",
+                        "color":"red"
+                    }
+                );
+            });
+
+            $(".green").bind("click", function (e) {
+                $(".styling").css(
+                    {
+                        "font-size":"40px",
+                        "color":"green"
+                    }
+                );
+            });
+            $(".violet").bind("click", function (e) {
+                $(".styling").css(
+                    {
+                        "font-size":"40px",
+                        "color":"violet"
+                    }
+                );
+            });
+
+
+
+        });
+</script>
+
+</html>
