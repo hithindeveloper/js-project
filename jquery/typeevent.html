@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>My First jQuery Application</title>
+    <script src="js/jquery.js">
+    </script>
+</head>
+<body>
+    <form method="post" class="form">
+        <input type="password" class="username">
+        <label class="msg"></label>
+        <input type="submit" value="submit">
+    </form>
+    <script>
+        $(document).ready(function(e)
+        {
+            
+            $(".username").bind("keypress",function(e)
+            {
+                  var username = $(".username").val();
+                  $(".msg").text(username);
+            });
+
+        });
+        
+
+
+    </script>
+</body>
+</html>
